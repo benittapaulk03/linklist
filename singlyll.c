@@ -18,7 +18,7 @@ void main()
    	float elapsed;
 	struct node *head=NULL,*pos=NULL,*tail=NULL;
 	long *a;
-	int ch,entry,i=0,flag;
+	int ch,entry,i=0,t;
 	while (1)
 	{
 		printf("1. Insert\n2. Display\n3. Count\n4. Search\n5. Exit");
@@ -49,7 +49,7 @@ void main()
 				}
 				gettimeofday(&t1, NULL);
 				elapsed = timedifference_msec(t0, t1);
-				printf("Code executed in %f milliseconds.\n", elapsed);
+				printf("\nCode executed in %f milliseconds.", elapsed);
 			}
 				printf("\n\n");
 				break;
@@ -71,7 +71,7 @@ void main()
 				pos=head;
 				for(i=0;pos!=NULL;i++)
 					pos=pos->next;
-				printf("The number of elements is %d\n\n",i);
+				printf("\nThe number of elements is %d",i);
 				break;
 			}
 			case 4 :
@@ -79,30 +79,30 @@ void main()
 				printf("\nEnter element to be searched :");
 				scanf("%d",&entry);
 				pos=head;
-				flag=0;
+				t=0;
 				while(pos!=NULL)
 				{
 					if(pos->data==entry)
 					{
-						flag=1;
+						t=1;
 						break;
 					}
 					pos=pos->next;
 				}
-				if(flag==1)
-					printf("Element found\n\n");
+				if(t==1)
+					printf("\nElement is present");
 				else
-					printf("Element not found\n\n");
+					printf("\nElement is not present");
 				break;
 			}
 			case 5 :
 			{
-				printf("\nGood bye!!!\n\n");
+				printf("\nGood bye");
 				exit(0);
 			}
 			default :
 			{
-				printf("Wrong input\n\n");
+				printf("\nWrong input");
 				break;
 			}
 		}
